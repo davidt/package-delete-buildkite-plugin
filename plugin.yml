@@ -1,0 +1,23 @@
+name: Package Delete
+description: Delete matching packages from a Buildkite package registry
+author: https://github.com/davidt
+requirements:
+  - curl
+  - jq
+  - buildkite-agent
+configuration:
+  properties:
+    registry:
+      type: string
+      description: >-
+        Registry slug. Supports "org/registry" or just "registry"
+        (defaults org to $BUILDKITE_ORGANIZATION_SLUG).
+    artifacts:
+      type: string
+      description: >-
+        Glob pattern for build artifacts to inspect (e.g. "dist/*.whl").
+        Package name and version are extracted from filenames.
+  required:
+    - registry
+    - artifacts
+  additionalProperties: false
