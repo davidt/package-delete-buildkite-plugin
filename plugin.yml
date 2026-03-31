@@ -4,6 +4,7 @@ author: https://github.com/davidt
 requirements:
   - curl
   - jq
+  - tar
   - buildkite-agent
 configuration:
   properties:
